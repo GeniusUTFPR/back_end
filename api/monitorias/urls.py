@@ -1,5 +1,7 @@
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
+from rest_framework.routers import DefaultRouter
+from . import views
+
 from monitorias.views import CursoViewSet, UsuarioViewSet, DisciplinaViewSet, MonitoriaViewSet, AvaliacaoViewSet
 from rest_framework import routers
 
@@ -12,6 +14,5 @@ router.register(r'monitoria', MonitoriaViewSet)
 router.register(r'avaliacao', AvaliacaoViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('admin/', admin.site.urls),
+  path('', views.index, name='index'),
 ]

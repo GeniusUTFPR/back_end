@@ -2,7 +2,10 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Curso, Usuario, Disciplina, Monitoria, Avaliacao 
 from .serializers import CursoSerializer, UsuarioSerializer, DisciplinaSerializer, MonitoriaSerializer, AvaliacaoSerializer 
+from django.http import HttpResponse
 
+def index(request):
+  return HttpResponse('Teste')
 
 class CursoViewSet(viewsets.ModelViewSet):
   queryset = Curso.objects.all()
