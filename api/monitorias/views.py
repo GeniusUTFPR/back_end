@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from .models import Curso, Usuario, Disciplina, Monitoria, Avaliacao 
 from .serializers import CursoSerializer, UsuarioSerializer, DisciplinaSerializer, MonitoriaSerializer, AvaliacaoSerializer 
 from django.http import HttpResponse
@@ -27,4 +27,6 @@ class AvaliacaoViewSet(viewsets.ModelViewSet):
   queryset = Avaliacao.objects.all()
   serializer_class = AvaliacaoSerializer
 
-
+class UsuarioCursoViewSet(generics.ListAPIView):
+    queryset = Usuario.objects.filter(curso_id = 1)
+    serializer_class = UsuarioSerializer

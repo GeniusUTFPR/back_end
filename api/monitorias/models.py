@@ -2,12 +2,14 @@ from django.db import models
 from django.contrib.auth.hashers import make_password
 
 class Curso(models.Model):
+    id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255)
 
     def __str__(self):
         return self.nome
 
 class Usuario(models.Model):
+    id = models.AutoField(primary_key=True)
     tipo = models.PositiveIntegerField()  # Estudante, Monitor pago, Monitor, Professor, Administrador
     nome = models.CharField(max_length=255)
     email = models.EmailField(unique=True)

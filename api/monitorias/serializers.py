@@ -10,7 +10,7 @@ class CursoSerializer(serializers.ModelSerializer):
 class UsuarioSerializer(serializers.ModelSerializer):
   class Meta:
     model = Usuario
-    fields = ['tipo', 'nome', 'email', 'senha', 'registro', 'celular', 'foto_perfil', 'curso']
+    fields = ['id', 'tipo', 'nome', 'email', 'senha', 'registro', 'celular', 'foto_perfil', 'curso']
 
 class DisciplinaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,3 +26,8 @@ class AvaliacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Avaliacao
         fields = ['id', 'pontuacao', 'descricao', 'usuario', 'monitoria']
+
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = '__all__'
