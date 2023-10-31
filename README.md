@@ -22,36 +22,47 @@ Siga as instruções abaixo para executar o backend em sua máquina local:
 
 1. **Clone o repositório:**
 
-   ```bash
-   git clone https://github.com/GeniusUTFPR/back_end.git 
-   ```
+```bash
+git clone https://github.com/GeniusUTFPR/back_end.git 
+```
 
-2. **Navegue para o diretório do projeto:**
+2. **Crie um ambiente virtual para isolar localmente as dependências de pacotes**
 
-   ```bash
-   cd api
-   ```
+```bash
+python -m venv env
+source env/bin/activate # No Windows usa `env\Scripts\activate`
+```
 
 3. **Instale as dependências:**
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 4. **Execute as migrações do banco de dados:**
 
-   ```bash
-   python manage.py migrate
-   ```
+```bash
+python manage.py migrate
+```
 
 5. **Inicie o servidor do Django:**
 
-   ```bash
-   python manage.py runserver
-   ```
+```bash
+python manage.py runserver
+```
 
 6. **O backend estará disponível em [http://localhost:8000](http://localhost:8000).**
 
-## Observações
+### Dicas de desenvolvimento:
 
-Se você tiver alguma dúvida ou precisar de assistência, não hesite em entrar em contato com nossa equipe de desenvolvedores.
+1. **Caso esteja no Linux, utilize os comandos com `python3`**.
+
+
+2. **Removendo temporários, migrations e o banco de dados:**
+
+```bash
+find . -name "__pycache__" -type d -exec rm -r {} +
+find . -path "*/migrations/*.pyc" -delete
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+rm db.sqlite3
+```
