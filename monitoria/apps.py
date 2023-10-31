@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MonitoriasConfig(AppConfig):
+class MonitoriaConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'monitorias'
+    name = 'monitoria'
