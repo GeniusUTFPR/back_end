@@ -5,3 +5,9 @@ class MonitoriaSerializer(ModelSerializer):
     class Meta:
         model = Monitoria
         fields = "__all__"
+
+class MonitoriaDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Monitoria
+        fields = "__all__"
+        depth = 1

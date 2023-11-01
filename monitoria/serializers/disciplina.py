@@ -11,8 +11,3 @@ class DisciplinaDetailSerializer(ModelSerializer):
         model = Disciplina
         fields = "__all__"
         depth = 1
-
-class DisciplinaListSerializer(ModelSerializer):
-    class Meta:
-        model = Disciplina
-        fields = ["nome", "periodo"]
